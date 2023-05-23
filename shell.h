@@ -15,7 +15,10 @@
 #include <unistd.h> /*access to POSIX API functions*/
 #include <fcntl.h> /*file control options*/
 
+char **get_environment(void);
+
 void print_environment(void);
 void search_command(char **args);
+extern char **environ;
 
 #endif

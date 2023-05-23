@@ -1,5 +1,6 @@
 #include "shell.h"
-extern char **environ;
+
+
 /**
  * print_environment - Prints the current environment
  *
@@ -8,14 +9,13 @@ extern char **environ;
 
 void print_environment(void)
 {
-    int i;
+	char **environment = get_environment();
+	int i = 0;
 
-    i = 0;
-    while (environ[i] != NULL)
-    {
-        write(STDOUT_FILENO, environ[i], strlen(environ[i]));
-        write(STDOUT_FILENO, "\n", 1);
-        i++;
-    }
+	while (environment[i] != NULL)
+	{
+		write(STDOUT_FILENO, environment[i], strlen(environment[i]));
+		write(STDOUT_FILENO, "\n", 1);
+		i++;
+	}
 }
-
