@@ -19,6 +19,8 @@ char **get_environment(void);
 
 void print_environment(void);
 void search_command(char **args);
+int parse_input(int argc, char *argv[]);
+
 extern char **environ;
 
 #endif
