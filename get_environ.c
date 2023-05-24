@@ -8,5 +8,6 @@
 
 char **get_environment(void)
 {
+
 	return (environ);
 }
