@@ -1,41 +1,44 @@
-#include "shell.h"
 /**
- * search_command - Searches and executes the specified command
+ * command_execute - Searches and executes the specified command
  * @args: Array of arguments
  *
  * Return: None
  */
 
-void search_command(char **args)
+void command_execute(char **args)
 {
-	char *command, *path, *path_copy, *directory, *full_command;
+	char *cm;
+	char *location;
+	char *cp_loc;
+	char *directory;
+	char *fcm;
 
-	command = strdup(args[0]);
-	if (command == NULL)
+	cm = strdup(args[0]);
+	if (cm == NULL)
 		exit(1);
 
-	if (access(command, X_OK) == -1)
+	if (access(cm, X_OK) == -1)
 	{
-		path = getenv("PATH");
-		path_copy = strdup(path);
-		directory = strtok(path_copy, ":");
+		location = getenv("PATH");
+		cp_loc = strdup(location);
+		directory = strtok(cp_loc, ":");
 
 		while (directory != NULL)
 		{
-			full_command = malloc(strlen(directory) + strlen(command) + 2);
-			if (full_command == NULL)
+			fcm = malloc(strlen(directory) + strlen(cm) + 2);
+			if (fcm == NULL)
 				exit(1);
-			sprintf(full_command, "%s/%s", directory, command);
-			if (access(full_command, X_OK) == 0)
+			sprintf(fcm, "%s/%s", directory, cm);
+			if (access(fcm, X_OK) == 0)
 			{
-				args[0] = full_command;
+				args[0] = fcm;
 				break;
 			}
-			free(full_command);
+			free(fcm);
 			directory = strtok(NULL, ":");
 		}
-		free(path_copy);
-		free(command);
+		free(cp_loc);
+		free(cm);
 	}
 
 	if (execvp(args[0], args) == -1)
