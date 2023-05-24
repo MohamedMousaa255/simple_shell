@@ -18,7 +18,7 @@
 #define MY_STDOUT STDOUT_FILENO
 
 char **get_environment(void);
-void print_environment(void);
+void Print_env(void);
 void search_command(char **args);
 int parse_input(char *input, char **args);
 

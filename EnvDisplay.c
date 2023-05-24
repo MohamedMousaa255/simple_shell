@@ -2,14 +2,13 @@
 
 
 /**
- * print_environment - Prints the current environment
- *
+ * print_environment - Printout  the current environment
  * Return: None
  */
 
-void print_environment(void)
+void Print_env(void)
 {	
-	int i = 0;
+	int counter = 0;
 	char **env = get_environment();
 	
 
@@ -17,6 +16,6 @@ void print_environment(void)
 	{
 		write(MY_STDOUT, env[i], strlen(env[i]));
 		write(MY_STDOUT, "\n", 1);
-		i++;
+		counter++;
 	}
 }
