@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * search_command - Searches and executes the specified command
  * @args: Array of arguments
