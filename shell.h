@@ -20,7 +20,7 @@
 char **get_environment(void);
 void Print_env(void);
 void command_execute(char **args);
-int parse_input(char *input, char **args);
+int parseing(char **arg, char *entercome );
 
 extern char **environ;
 
