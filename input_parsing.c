@@ -6,7 +6,7 @@
  * Return: argc
  */
 
-int parseing(char **arg, char *entercome )
+int parseing(char **arg, char *entercome)
 {
 	int posion = 0;
 
