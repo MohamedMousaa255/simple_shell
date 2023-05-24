@@ -34,7 +34,7 @@ int main(void)
 			count = parse_input(input, args);
 			args[count] = NULL;
 
-			search_command(args);
+			command_execute(args);
 		}
 		else
 			wait(NULL);
