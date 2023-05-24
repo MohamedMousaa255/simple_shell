@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		pid = fork();
 		if (pid == 0)
 		{
-			count = argc - 1;
+			count = parse_input(argc, args);
 			args[count] = NULL;
 
 			search_command(args);
