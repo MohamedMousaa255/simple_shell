@@ -2,8 +2,8 @@
 
 
 /**
- * print_environment - Printout  the current environment
- * Return: None
+ * Print_env - Printout  environment
+ * Return: Nothing
  */
 
 void Print_env(void)
