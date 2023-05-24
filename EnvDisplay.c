@@ -7,10 +7,10 @@
  */
 
 void Print_env(void)
-{	
+{
 	int counter = 0;
 	char **env = get_environment();
-	
+
 
 	while (env[counter] != NULL)
 	{

@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	
+
 	char *argument[100];
 	pid_t pid;
 	int c;
