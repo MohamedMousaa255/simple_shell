@@ -2,27 +2,27 @@
 
 /**
  * main - Main function
- *
  * Return: Returns 0
  */
 
 int main(void)
 {
-	char input[150];
-	char *args[20];
+	
+	char *argument[100];
 	pid_t pid;
-	int count;
+	int c;
+	char comming_comand[400];
 
 	while (1)
 	{
-		if (fgets(input, 150, stdin) == NULL)
+		if (fgets(comming_comand, 400, stdin) == NULL)
 			exit(0);
 
-		input[strcspn(input, "\n")] = 0;
+		comming_comand[strcspn(comming_comand, "\n")] = 0;
 
-		if (strcmp(input, "exit") == 0)
+		if (strcmp(comming_comand, "exit") == 0)
 			break;
-		else if (strcmp(input, "env") == 0)
+		else if (strcmp(comming_comand, "env") == 0)
 		{
 			Print_env();
 			continue;
@@ -31,10 +31,10 @@ int main(void)
 		pid = fork();
 		if (pid == 0)
 		{
-			count = parseing(args, input);
-			args[count] = NULL;
+			c = parseing(argument, comming_comand);
+			argument[c] = NULL;
 
-			command_execute(args);
+			command_execute(argument);
 		}
 		else
 			wait(NULL);

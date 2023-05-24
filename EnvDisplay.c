@@ -12,9 +12,9 @@ void Print_env(void)
 	char **env = get_environment();
 	
 
-	while (env[i] != NULL)
+	while (env[counter] != NULL)
 	{
-		write(MY_STDOUT, env[i], strlen(env[i]));
+		write(MY_STDOUT, env[counter], strlen(env[counter]));
 		write(MY_STDOUT, "\n", 1);
 		counter++;
 	}
