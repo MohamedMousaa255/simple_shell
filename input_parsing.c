@@ -1,21 +1,20 @@
 #include "shell.h"
 /**
- * parse_input - Parses user input into individual commands and arguments
- * @input: User input to be parsed
- * @args: Array of arguments
- *
- * Return: Number of commands and arguments
+ * parse_input - divide  input to  commands and arg
+ * @arg: arguments arr
+ * @entercome:  Input to do parse for it
+ * Return: argc
  */
 
-int parse_input(char *input, char **args)
+int parseing(char **arg, char *entercome )
 {
-	int index = 0;
+	int posion = 0;
 
-	args[index] = strtok(input, " ");
-	while (index < 10 && args[index] != NULL)
+	arg[posion] = strtok(entercome, " ");
+	while (posion < 10 && arg[posion] != NULL)
 	{
-		index++;
-		args[index] = strtok(NULL, " ");
+		posion++;
+		arg[posion] = strtok(NULL, " ");
 	}
-	return (index);
+	return (posion);
 }

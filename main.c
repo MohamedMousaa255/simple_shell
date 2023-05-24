@@ -24,14 +24,14 @@ int main(void)
 			break;
 		else if (strcmp(input, "env") == 0)
 		{
-			print_environment();
+			Print_env();
 			continue;
 		}
 
 		pid = fork();
 		if (pid == 0)
 		{
-			count = parse_input(input, args);
+			count = parseing(args, input);
 			args[count] = NULL;
 
 			search_command(args);
