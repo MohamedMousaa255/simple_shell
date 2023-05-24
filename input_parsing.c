@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * parse_input - divide  input to  commands and arg
+ * parseing - divide  input to  commands and arg
  * @arg: arguments arr
  * @entercome:  Input to do parse for it
  * Return: argc
