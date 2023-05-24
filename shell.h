@@ -15,6 +15,7 @@
 #include <unistd.h> /*access to POSIX API functions*/
 #include <fcntl.h> /*file control options*/
 
+#define MY_STDOUT STDOUT_FILENO
 
 char **get_environment(void);
 void print_environment(void);

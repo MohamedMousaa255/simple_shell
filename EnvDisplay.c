@@ -8,14 +8,15 @@
  */
 
 void print_environment(void)
-{
-	char **environment = get_environment();
+{	
 	int i = 0;
+	char **env = get_environment();
+	
 
-	while (environment[i] != NULL)
+	while (env[i] != NULL)
 	{
-		write(STDOUT_FILENO, environment[i], strlen(environment[i]));
-		write(STDOUT_FILENO, "\n", 1);
+		write(MY_STDOUT, env[i], strlen(env[i]));
+		write(MY_STDOUT, "\n", 1);
 		i++;
 	}
 }
